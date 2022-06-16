@@ -14,8 +14,8 @@ app.use((req, res, next) => {
 
 //Routes with middleware chaining
 app.get('/now', (req, res, next) => {
-    myDate = new Date().toString;
-    req.time = myDate;
+    let myDate = new Date();
+    req.time = myDate.toString();
     next()
 }, (req, res) => {
     res.json({ "time": req.time })
