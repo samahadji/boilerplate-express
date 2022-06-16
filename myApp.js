@@ -12,6 +12,15 @@ app.use((req, res, next) => {
     next();
 })
 
+//Routes with middleware chaining
+app.get('/now', (req, res, next) => {
+    myDate = new Date().toString;
+    req.time = myDate;
+    next()
+}, (req, res) => {
+    res.json({ "time": req.time })
+} )
+
 // Routes
 app.get("/", function(req, res) {
     res.sendFile(__dirname + '/views/index.html')
