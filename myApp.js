@@ -38,6 +38,11 @@ app.get("/:word/echo", (req, res) => {
     res.json({"echo": req.params.word})
 })
 
+// Routes with a query string
+
+app.route("/name").get((req, res) => {
+    res.json({"name": req.query.first + " " + req.query.last})
+})
 
 
 
