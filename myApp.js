@@ -32,7 +32,11 @@ app.get("/json", function(req, res) {
     res.json({"message": message})
 })
 
+//Routes with parameters
 
+app.get("/:word/echo", (req, res) => {
+    res.json({"echo": req.params.word})
+})
 
 
 
